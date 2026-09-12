@@ -25,6 +25,7 @@ main{padding:16px 16px calc(32px + env(safe-area-inset-bottom))}.notice{backgrou
 details{border-top:1px solid var(--line);padding:10px 0}details:first-of-type{border-top:0}summary{font-weight:800;cursor:pointer;font-size:15px;line-height:1.4}.small{font-size:13px!important;color:var(--muted)}.key{font-weight:800;color:#134e4a}.red{font-weight:800;color:#991b1b}.tag{font-size:11px;font-weight:800;background:#e0e7ff;color:#3730a3;padding:4px 7px;border-radius:999px;display:inline-block;margin-left:6px;vertical-align:1px}
 .tableWrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0}.grid{width:100%;border-collapse:collapse;min-width:620px}.grid th,.grid td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top;font-size:13px;line-height:1.4}.grid th{background:#f9fafb;font-weight:850}.check{list-style:none;padding-left:0!important}.check li{padding-left:26px;position:relative;margin:7px 0}.check li:before{content:"✓";position:absolute;left:2px;color:var(--accent);font-weight:900}.source a{color:var(--blue);word-break:break-word}.source{font-size:13px!important}.callout{border-left:4px solid var(--accent);padding:8px 12px;background:#f0fdfa;border-radius:8px;margin:10px 0}.danger{border-left:4px solid #dc2626;padding:8px 12px;background:#fef2f2;border-radius:8px;margin:10px 0}.good{border-left:4px solid #2563eb;padding:8px 12px;background:#eff6ff;border-radius:8px;margin:10px 0}
 .questionPicker{background:linear-gradient(145deg,#0f766e,#115e59);color:#fff;border:0;box-shadow:0 8px 24px rgba(15,118,110,.2)}.questionPicker h2{margin-bottom:5px}.questionPicker .small{color:#ccfbf1}.pickerButton{width:100%;border:0;border-radius:12px;padding:14px;background:#facc15;color:#422006;font-size:16px;font-weight:900;cursor:pointer;margin-top:12px}.pickerButton:active{transform:translateY(1px)}.pickedQuestion{min-height:100px;display:flex;align-items:center;background:#fff;color:var(--ink);border-radius:14px;padding:16px;font-size:19px;font-weight:800;line-height:1.38;margin-top:13px}.pickerMeta{font-size:12px;color:#ccfbf1;margin-top:9px;font-weight:700}@media(max-width:520px){.pickedQuestion{font-size:18px}}
+.floatingIndex{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:20;display:flex;align-items:center;justify-content:center;min-height:46px;padding:0 16px;border-radius:999px;background:var(--accent2);color:#fff;text-decoration:none;font-size:15px;font-weight:900;box-shadow:0 5px 18px rgba(15,23,42,.28);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .18s ease,transform .18s ease}.floatingIndex.visible{opacity:1;transform:translateY(0);pointer-events:auto}.floatingIndex:focus-visible{outline:3px solid #facc15;outline-offset:3px}
 </style>
 </head>
 <body>
@@ -193,6 +194,7 @@ details{border-top:1px solid var(--line);padding:10px 0}details:first-of-type{bo
 
 <div class="footer">CMS-centered educational field reference. Not legal, billing, or patient-specific clinical advice. Current federal regulations, CMS manuals, applicable MAC guidance, and the clinical record control.</div>
 </div></main>
+<a id="floatingIndex" class="floatingIndex" href="#top" aria-label="Back to the main index">↑ Index</a>
 <script>
 (function(){
  const s=document.getElementById('search'); if(!s) return;
@@ -236,6 +238,14 @@ details{border-top:1px solid var(--line);padding:10px 0}details:first-of-type{bo
  let last=-1;
  function showQuestion(){let index=Math.floor(Math.random()*questions.length);while(index===last)index=Math.floor(Math.random()*questions.length);last=index;output.textContent=questions[index];}
  button.addEventListener('click',showQuestion);
+})();
+
+(function(){
+ const button=document.getElementById('floatingIndex');
+ if(!button) return;
+ function update(){button.classList.toggle('visible',window.scrollY>420);}
+ window.addEventListener('scroll',update,{passive:true});
+ update();
 })();
 </script>
 
