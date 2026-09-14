@@ -31,13 +31,23 @@ details.section{border:0;padding:0;margin:0;scroll-margin-top:95px}details.secti
 
 /* Team tools inherit the existing guide layout. */
 .section select,.section button{font:inherit;min-height:44px;border:1px solid var(--accent);border-radius:10px;padding:10px 12px;margin:6px 4px 8px 0;max-width:100%}.section select{display:block;width:100%;background:white;color:var(--ink)}.section button{background:var(--accent2);color:white;cursor:pointer}.section button:disabled{opacity:.55;cursor:default}.section label{display:block;font-weight:700;margin-top:10px}a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid #2563eb;outline-offset:3px}#team-quiz button{display:block;width:100%;text-align:left}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+.quickshot{border:2px solid var(--accent);background:#f0fdfa}
+.quickshot select,.quickshot button{display:block;width:100%;font:inherit;border-radius:12px;min-height:48px;padding:12px;margin:10px 0}
+.quickshot select{background:white;color:var(--ink);border:1px solid var(--accent)}
+.quickshot button{background:var(--accent2);color:white;border:0;font-weight:800;cursor:pointer;font-size:18px}
+.quickshot button:hover{background:#134e4a}
+.quickshot button:focus-visible,.quickshot select:focus-visible,#quickshot-bank summary:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+#quickshot-result{background:white;border-radius:12px;padding:14px;margin-top:16px}
+#quickshot-question{font-size:22px;font-weight:750;line-height:1.4;margin:8px 0}
+.quickshot-item{padding:7px 0}
+#quickshot-bank summary{min-height:44px;padding:10px 0}
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="title">Hospice Field Guide — Team Edition</div><div class="sub">CMS-centered field reference • Team Edition v8</div></div></header>
+<header><div class="wrap"><div class="title">Hospice Field Guide — Team Edition</div><div class="sub">CMS-centered field reference • Team Edition v9</div></div></header>
 <main><div class="wrap" id="top">
 <div class="notice"><strong>Important:</strong> Educational field reference only. This guide summarizes Medicare/CMS hospice rules and practical recognition concepts; it does not determine eligibility, relatedness, level of care, coverage, or a patient-specific plan. Current CMS regulations, manuals, MAC guidance, and the clinical record control.</div>
-<p><a class="tocItem" href="#field-call">Start a Field Call</a><a class="tocItem" href="#question-now">I Need a Question NOW</a></p><div class="homeIntro"><strong>Robust Field Manual:</strong> Use the index below to jump straight to a topic. Most sections contain expandable deep-dives so the landing page stays fast on iPhone.</div>
+<div class="homeIntro"><strong>Robust Field Manual:</strong> Use the index below to jump straight to a topic. Most sections contain expandable deep-dives so the landing page stays fast on iPhone.</div>
 <label for="search" class="small">Search the guide</label><input id="search" class="search" type="search" placeholder="Search topics, e.g. benefit periods, GIP, palliative…" />
 <div class="sectionControls" aria-label="Section controls"><button type="button" id="expandAll">Expand all</button><button type="button" id="collapseAll">Collapse all</button></div>
 <div id="toc">
@@ -155,6 +165,24 @@ details.section{border:0;padding:0;margin:0;scroll-margin-top:95px}details.secti
 <div class="card"><h2>Late-stage anchor points</h2><p><strong>7A</strong> — speech limited to about six intelligible words.</p><p><strong>7B</strong> — only one intelligible word.</p><p><strong>7C</strong> — unable to ambulate independently.</p><p><strong>7D</strong> — unable to sit up independently.</p><p><strong>7E</strong> — unable to smile.</p><p><strong>7F</strong> — unable to hold head up.</p><div class="callout"><strong>Important:</strong> FAST stage alone does not determine hospice eligibility. The broader trajectory—including nutrition, infections, aspiration, wounds, function, comorbidities, and overall prognosis—matters.</div></div><a class="backtop" href="#top">↑ Back to index</a></details>
 
 <details id="hospital-quick" class="section"><summary class="sectionTitle">🏥 Hospital Quick-Shot CM Questions</summary>
+<!-- Hospital ultra-short bank: start -->
+<div class="card quickshot"><h2>One question. Then listen.</h2>
+<p>Start with the CM’s discharge problem. Pick one question for a <strong>5–10 second hallway interaction</strong>, listen, and offer a concrete next step. Hospice is one possible source of support when it fits the patient’s goals and clinical needs.</p>
+<label for="quickshot-category"><strong>Choose an angle</strong></label>
+<select id="quickshot-category"><option value="">All categories</option><option>Discharge</option><option>Readmission Risk</option><option>Decline</option><option>Family/Caregiver</option><option>Goals of Care</option><option>Disease-Specific</option><option>Help the CM</option><option>Referral Opening</option></select><button type="button" id="quickshot-next">🎲 Give Me a Question</button>
+<div id="quickshot-result" role="status" aria-live="polite" aria-atomic="true"><span id="quickshot-label" class="pill">Discharge</span><p id="quickshot-question">Who’s your toughest discharge today?</p></div>
+<p class="small">Choose a category to narrow the random question. Tap again for a different question.</p>
+</div>
+<div class="card" id="quickshot-bank"><h2>Browse all 47 ultra-short questions</h2><p class="small">Tap a category to expand it. Referral openings fit best after you understand the need.</p><details data-question-category="Discharge"><summary>Discharge <span class="tag">9</span></summary><ul><li class="quickshot-item">Anybody having a tough discharge today?</li><li class="quickshot-item">Anybody you’re worried won’t do well at home?</li><li class="quickshot-item">Any discharge you need help getting across the finish line?</li><li class="quickshot-item">Any patient whose discharge plan keeps falling apart?</li><li class="quickshot-item">Anybody medically ready but the family isn’t ready?</li><li class="quickshot-item">Any patient you keep thinking, “There has to be a better plan”?</li><li class="quickshot-item">Who’s giving you the biggest discharge headache today?</li><li class="quickshot-item">What patient are you most worried about going home?</li><li class="quickshot-item">Who’s your toughest discharge today?</li></ul></details>
+<details data-question-category="Readmission Risk"><summary>Readmission Risk <span class="tag">4</span></summary><ul><li class="quickshot-item">Anybody you’re worried will bounce right back?</li><li class="quickshot-item">Anybody with frequent admissions back again?</li><li class="quickshot-item">Anybody here again for the same problem?</li><li class="quickshot-item">Who are you worried I’m going to see back here next week?</li></ul></details>
+<details data-question-category="Decline"><summary>Decline <span class="tag">6</span></summary><ul><li class="quickshot-item">Anybody declining despite everything being done?</li><li class="quickshot-item">Anybody whose overall trajectory is worrying you?</li><li class="quickshot-item">Anyone noticeably weaker than their last admission?</li><li class="quickshot-item">Any big functional declines this admission?</li><li class="quickshot-item">Anybody eating a lot less or losing significant weight?</li><li class="quickshot-item">Anybody where treatment isn’t getting them back to baseline anymore?</li></ul></details>
+<details data-question-category="Family/Caregiver"><summary>Family/Caregiver <span class="tag">6</span></summary><ul><li class="quickshot-item">Anybody whose family needs more support before discharge?</li><li class="quickshot-item">Any families struggling with what comes next?</li><li class="quickshot-item">Any family saying they can’t manage this at home?</li><li class="quickshot-item">Anybody getting harder to care for at home?</li><li class="quickshot-item">Any patient whose needs are exceeding what the family can handle?</li><li class="quickshot-item">Any family you haven’t had time to have the bigger conversation with?</li></ul></details>
+<details data-question-category="Goals of Care"><summary>Goals of Care <span class="tag">4</span></summary><ul><li class="quickshot-item">Anybody whose family is starting to question more hospitalizations?</li><li class="quickshot-item">Any families saying, “We don’t want to keep doing this”?</li><li class="quickshot-item">Anybody starting to shift toward comfort?</li><li class="quickshot-item">Any goals-of-care conversations happening today?</li></ul></details>
+<details data-question-category="Disease-Specific"><summary>Disease-Specific <span class="tag">5</span></summary><ul><li class="quickshot-item">Any advanced CHF patients who keep coming back?</li><li class="quickshot-item">Any COPD patients with repeated admissions?</li><li class="quickshot-item">Any advanced dementia patients with recurrent infections or decline?</li><li class="quickshot-item">Any cancer patients whose treatment options are getting limited?</li><li class="quickshot-item">Anybody with end-stage disease who’s spending more time here than at home?</li></ul></details>
+<details data-question-category="Help the CM"><summary>Help the CM <span class="tag">8</span></summary><ul><li class="quickshot-item">Where can I make your day easier?</li><li class="quickshot-item">Anything I can take off your plate?</li><li class="quickshot-item">Anybody I can help you with before I leave?</li><li class="quickshot-item">Anything hospice-related you want me to chase down?</li><li class="quickshot-item">Anybody you want me to follow up with the family on?</li><li class="quickshot-item">Anybody you want me to circle back on tomorrow?</li><li class="quickshot-item">Who should I make sure I ask you about next time?</li><li class="quickshot-item">Anything I can take off your plate before I leave?</li></ul></details>
+<details data-question-category="Referral Opening"><summary>Referral Opening <span class="tag">5</span></summary><ul><li class="quickshot-item">Anybody where the family needs help understanding hospice?</li><li class="quickshot-item">Any family that would benefit from just an informational conversation?</li><li class="quickshot-item">Anybody appropriate for us to take a look at—no commitment?</li><li class="quickshot-item">Anybody you want me to screen with my clinical team?</li><li class="quickshot-item">Anybody you’re on the fence about? I can have our clinical team review.</li></ul></details>
+</div>
+<!-- Hospital ultra-short bank: end -->
 <div class="card"><h2>How to use this in a hospital</h2><p>You usually have a very short window with a case manager. Don’t run a checklist. Pick <strong>one or two questions</strong> that fit the moment, listen for the barrier, and then offer one concrete way to help.</p><div class="callout"><strong>Best default opener:</strong> “Anything on your list today where the discharge plan is getting hung up and an outside partner might be able to help?”</div></div>
 <div class="card"><h2>🚪 Discharge-first questions</h2><div class="q">“What’s the anticipated discharge plan right now?”</div><div class="q">“What’s the main barrier keeping this patient here today?”</div><div class="q">“What still needs to happen before discharge is realistic?”</div><div class="q">“Is the hold-up mainly clinical, functional, caregiver-related, equipment-related, or placement-related?”</div><div class="q">“What’s still missing to make the discharge plan workable?”</div><div class="q">“Is there anything an outside partner could help solve?”</div></div>
 <div class="card"><h2>🏠 Home-readiness questions</h2><div class="q">“If this patient goes home, what worries you most about the plan holding together?”</div><div class="q">“Does the family feel ready to manage them at home?”</div><div class="q">“Are there symptoms, equipment needs, medications, or caregiver concerns that could derail discharge?”</div><div class="q">“Is the family aligned with the plan, or is there still a difficult conversation that needs to happen?”</div><div class="q">“Who is coordinating the next steps from here?”</div></div>
@@ -365,4 +393,27 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
+<script>
+(function(){
+  const select = document.getElementById('quickshot-category');
+  const question = document.getElementById('quickshot-question');
+  const label = document.getElementById('quickshot-label');
+  const bank = Array.from(document.querySelectorAll('#quickshot-bank details')).flatMap(function(group){
+    return Array.from(group.querySelectorAll('.quickshot-item')).map(function(item){
+      return {category:group.dataset.questionCategory, text:item.textContent};
+    });
+  });
+  function giveQuestion(){
+    const choices = bank.filter(function(item){
+      return (!select.value || item.category === select.value) && item.text !== question.textContent;
+    });
+    if (!choices.length) return;
+    const next = choices[Math.floor(Math.random()*choices.length)];
+    label.textContent = next.category;
+    question.textContent = next.text;
+  }
+  document.getElementById('quickshot-next').addEventListener('click', giveQuestion);
+  select.addEventListener('change', giveQuestion);
+})();
+</script>
 </body></html>
